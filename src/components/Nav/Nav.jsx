@@ -37,7 +37,7 @@ const Nav = () => {
       <img src={logo} alt="Logo Pepper Jelly"/>
       <ul>
         <li>
-          <Link to="home" smooth={true} duration={500}>Home</Link>
+          <Link to="container" smooth={true} duration={500}>Home</Link>
         </li>
         <li>
           <Link to="about" smooth={true} duration={500}>Sobre</Link>
