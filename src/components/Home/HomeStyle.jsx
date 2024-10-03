@@ -27,8 +27,8 @@ export const HomeStyle = styled.section`
 
   .content {
     width: 100%;
-    max-width: 800px;
-    padding: 11rem; 
+    max-width: 900px;
+    padding: 15rem; 
     text-align: center;
     color: white;
 
@@ -86,6 +86,44 @@ export const HomeStyle = styled.section`
     100% {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      padding: 1.5rem; 
+    }
+
+    h1 {
+      font-size: 2rem; 
+    }
+
+    p {
+      font-size: 1rem; 
+    }
+
+    .download-button {
+      padding: 0.75rem 1.5rem; 
+      font-size: 1rem; 
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content {
+      padding: 1rem; 
+    }
+
+    h1 {
+      font-size: 1.8rem; 
+    }
+
+    p {
+      font-size: 0.9rem; 
+    }
+
+    .download-button {
+      padding: 0.5rem 1rem; 
+      font-size: 0.9rem; 
     }
   }
 `;

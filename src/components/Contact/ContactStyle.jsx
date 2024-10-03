@@ -97,4 +97,50 @@ export const ContactStyle = styled.section`
       font-size: 1.5rem;
     }
   }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    .form-group label {
+      font-size: 0.95rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+    }
+
+    input,
+    textarea {
+      padding: 0.4rem;
+    }
+
+    button {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+    }
+  }
 `;

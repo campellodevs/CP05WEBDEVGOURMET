@@ -54,21 +54,43 @@ export const ApresentacaoStyle = styled.section`
     }
   }
 
+  /* Tablet and mobile styles */
   @media (max-width: 768px) {
+    padding: 2rem 1rem; /* Reduced padding for mobile */
+    
     .content {
       padding: 1.5rem;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.5rem; /* Adjusted font size for h1 */
     }
 
     p {
-      font-size: 1.25rem;
+      font-size: 1.25rem; /* Adjusted font size for paragraph */
     }
 
     li {
-      font-size: 1rem;
+      font-size: 1rem; /* Adjusted font size for list items */
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2rem; /* Further reduce font size for mobile */
+    }
+
+    p {
+      font-size: 1rem; /* Further reduce font size for paragraph */
+    }
+
+    ul {
+      padding: 0 0.5rem; /* Add some horizontal padding for list */
+    }
+
+    li {
+      font-size: 0.9rem; /* Further reduce font size for list items */
     }
   }
 `;

@@ -12,7 +12,7 @@ const Home = () => {
       <HomeStyle>
         <div className="video-background">
           <video autoPlay loop muted>
-            <source src="/src/assets/videocozinhando.mp4" type="video/mp4" />
+            <source src="./src/assets/videocozinhando.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos.
           </video>
         </div>
@@ -37,7 +37,6 @@ const Home = () => {
       <div id="contact">
         <Contact />
       </div>
-
     </>
   );
 }

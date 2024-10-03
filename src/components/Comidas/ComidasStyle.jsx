@@ -100,4 +100,69 @@ export const ComidasStyle = styled.section`
     color: black;
     margin-bottom: 1rem;
   }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem; /* Reduced padding for tablets */
+    
+    .filters {
+      flex-direction: column; /* Stack filters vertically on smaller screens */
+      align-items: stretch; /* Make filters take full width */
+      
+      input {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 1rem; /* Add bottom margin for spacing */
+      }
+    }
+
+    .section {
+      padding: 1.5rem; /* Reduced padding for the section */
+    }
+
+    .cards-container {
+      gap: 1.5rem; /* Reduced gap for cards */
+    }
+
+    .card {
+      h2 {
+        font-size: 1.25rem; /* Reduced font size for h2 */
+      }
+
+      p {
+        font-size: 0.9rem; /* Reduced font size for paragraph */
+      }
+
+      span {
+        font-size: 1rem; /* Reduced font size for span */
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem; /* Further reduced padding for mobile */
+    
+    .filters {
+      input, select {
+        font-size: 0.9rem; /* Smaller font size for inputs/selects */
+      }
+    }
+
+    .cards-container {
+      grid-template-columns: 1fr; /* Stack cards in a single column */
+    }
+
+    .card {
+      h2 {
+        font-size: 1.1rem; /* Further reduced font size for h2 */
+      }
+
+      p {
+        font-size: 0.8rem; /* Further reduced font size for paragraph */
+      }
+
+      span {
+        font-size: 0.9rem; /* Further reduced font size for span */
+      }
+    }
+  }
 `;

@@ -1,15 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { NavStyle } from './NavStyle';
-import { Link } from 'react-scroll'; // Importando o componente Link
+import { Link } from 'react-scroll';
 import logo from '../../assets/logopepperjelly.png';
+
+const HamburgerIcon = () => (
+  <svg width="30" height="30" viewBox="0 0 30 30">
+    <line x1="5" y1="7" x2="25" y2="7" stroke="white" strokeWidth="3" />
+    <line x1="5" y1="15" x2="25" y2="15" stroke="white" strokeWidth="3" />
+    <line x1="5" y1="23" x2="25" y2="23" stroke="white" strokeWidth="3" />
+  </svg>
+);
+
+const CloseIcon = () => (
+  <svg width="30" height="30" viewBox="0 0 30 30">
+    <line x1="5" y1="5" x2="25" y2="25" stroke="white" strokeWidth="3" />
+    <line x1="25" y1="5" x2="5" y2="25" stroke="white" strokeWidth="3" />
+  </svg>
+);
 
 const Nav = () => {
   const [opacity, setOpacity] = useState(1);
+  const [isOpen, setIsOpen] = useState(false); // State to control the menu open/close
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    console.log('Scroll Y:', scrollY); // Verifique se o scroll está sendo detectado
-    const newOpacity = Math.max(1 - scrollY / 200, 0.7); // Altere o mínimo para 0.7
+    const newOpacity = Math.max(1 - scrollY / 200, 0.7);
     setOpacity(newOpacity);
   };
 
@@ -20,6 +35,10 @@ const Nav = () => {
     };
   }, []);
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <NavStyle 
       style={{
@@ -29,15 +48,18 @@ const Nav = () => {
         left: 0, 
         width: '100%', 
         transition: 'opacity 0.3s ease',
-        backgroundColor: `rgba(255, 133, 27, ${opacity})`, // Adicionando fundo com opacidade
-        pointerEvents: 'auto', // Certifique-se de que o Nav receba eventos de ponteiro
-        zIndex: 10 // Garantir que o nav fique acima de outros elementos
+        backgroundColor: `rgba(255, 133, 27, ${opacity})`,
+        pointerEvents: 'auto',
+        zIndex: 10
       }}
     >
-      <img src={logo} alt="Logo Pepper Jelly"/>
-      <ul>
+      <img src={logo} alt="Logo Pepper Jelly" />
+      <div className="hamburger" onClick={toggleMenu}>
+        {isOpen ? <CloseIcon /> : <HamburgerIcon />} {/* Use icons for the menu */}
+      </div>
+      <ul className={isOpen ? 'open' : ''}>
         <li>
-          <Link to="container" smooth={true} duration={500}>Home</Link>
+          <Link to="content-home" smooth={true} duration={500}>Home</Link>
         </li>
         <li>
           <Link to="about" smooth={true} duration={500}>Sobre</Link>
@@ -54,6 +76,6 @@ const Nav = () => {
       </ul>
     </NavStyle>
   );
-}
+};
 
 export default Nav;
